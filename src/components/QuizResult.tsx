@@ -1,4 +1,3 @@
-
 import React, { useMemo } from 'react';
 import { questions } from '../data/questions';
 import { Button } from '@/components/ui/button';
@@ -37,7 +36,7 @@ const QuizResult = ({ answers, onReset }: QuizResultProps) => {
   const percentage = Math.round((score / totalQuestions) * 100);
 
   // Calculate category scores
-  const categoryScores = useMemo(() => {
+  const categoryScores = useMemo<CategoryScore[]>(() => {
     const categories: Record<string, { correct: number; total: number }> = {};
 
     // Initialize categories
